@@ -22,6 +22,7 @@ namespace SignalRApi.Controllers
             var values = _aboutService.TGetListAll();
             return Ok(values);
         }
+
         [HttpPost]
         public IActionResult CreateAbout(CreateAboutDto createAboutDto)
         {
@@ -34,6 +35,7 @@ namespace SignalRApi.Controllers
             _aboutService.TAdd(about);
             return Ok("Hakkımda Kısmı Başarılı Bir Şekilde Eklendi");
         }
+
         [HttpDelete]
         public IActionResult DeleteAbout(int id)
         {
@@ -41,6 +43,7 @@ namespace SignalRApi.Controllers
             _aboutService.TDelete(value);
             return Ok("Hakkımda Alanı Silindi");
         }
+
         [HttpPut]
         public IActionResult UpdateAbout(UpdateAboutDto updateAboutDto)
         {
@@ -54,6 +57,7 @@ namespace SignalRApi.Controllers
             _aboutService.TUpdate(about);
             return Ok("Hakkında Alanı Güncellendi");
         }
+
         [HttpGet("GetAbout")]
         public IActionResult GetAbout(int id)
         {

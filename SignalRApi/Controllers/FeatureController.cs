@@ -19,12 +19,14 @@ namespace SignalRApi.Controllers
             _featureService = featureService;
             _mapper = mapper;
         }
+
         [HttpGet]
         public IActionResult FeatureList()
         {
             var value = _mapper.Map<List<ResultFeatureDto>>(_featureService.TGetListAll());
             return Ok(value);
         }
+
         [HttpPost]
         public IActionResult CreateFeature(CreateFeatureDto createFeatureDto)
         {
@@ -39,6 +41,7 @@ namespace SignalRApi.Controllers
             });
             return Ok("Öne Çıkan Bilgisi Eklendi");
         }
+
         [HttpDelete]
         public IActionResult DeleteFeature(int id)
         {
@@ -46,12 +49,14 @@ namespace SignalRApi.Controllers
             _featureService.TDelete(value);
             return Ok("Öne Çıkan Bilgisi Silindi");
         }
+
         [HttpGet("GetFeature")]
         public IActionResult GetFeature(int id)
         {
             var value = _featureService.TGetByID(id);
             return Ok(value);
         }
+
         [HttpPut]
         public IActionResult UpdateFeature(UpdateFeatureDto updateFeatureDto)
         {

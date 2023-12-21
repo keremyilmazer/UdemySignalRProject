@@ -26,6 +26,7 @@ namespace SignalRApi.Controllers
             var value = _mapper.Map<List<ResultSocialMediaDto>>(_socialMediaService.TGetListAll());
             return Ok(value);
         }
+
         [HttpPost]
         public IActionResult CreateSocialMedia(CreateSocialMediaDto createSocialMediaDto)
         {
@@ -37,6 +38,7 @@ namespace SignalRApi.Controllers
             });
             return Ok("Sosyal Medya Bilgisi Eklendi");
         }
+
         [HttpDelete]
         public IActionResult DeleteSocialMedia(int id)
         {
@@ -44,12 +46,14 @@ namespace SignalRApi.Controllers
             _socialMediaService.TDelete(value);
             return Ok("Sosyal Medya Bilgisi Silindi");
         }
+
         [HttpGet("GetSocialMedia")]
         public IActionResult GetSocialMedia(int id)
         {
             var value = _socialMediaService.TGetByID(id);
             return Ok(value);
         }
+
         [HttpPut]
         public IActionResult UpdateSocialMedia(UpdateSocialMediaDto updateSocialMediaDto)
         {

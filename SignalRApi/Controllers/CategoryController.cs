@@ -19,12 +19,14 @@ namespace SignalRApi.Controllers
             _categoryService = categoryService;
             _mapper = mapper;
         }
+
         [HttpGet]
         public IActionResult CategoryList()
         {
             var value = _mapper.Map<List<ResultCategoryDto>>(_categoryService.TGetListAll());
             return Ok(value);
         }
+
         [HttpPost]
         public IActionResult CreateCategory(CreateCategoryDto createCategoryDto)
         {
@@ -35,6 +37,7 @@ namespace SignalRApi.Controllers
             });
             return Ok("Kategori Eklendi");
         }
+
         [HttpDelete]
         public IActionResult DeleteCategory(int id)
         {
@@ -42,12 +45,14 @@ namespace SignalRApi.Controllers
             _categoryService.TDelete(value);
             return Ok("Kategori Silindi");
         }
+
         [HttpGet("GetCategory")]
         public IActionResult GetCategory(int id)
         {
             var value = _categoryService.TGetByID(id);
             return Ok(value);
         }
+
         [HttpPut]
         public IActionResult UpdateCategory(UpdateCategoryDto updateCategoryDto)
         {
