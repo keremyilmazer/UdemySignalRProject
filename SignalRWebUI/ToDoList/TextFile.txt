@@ -1,0 +1,4 @@
+﻿--CategoryCount
+--ProductCount
+--Aktif Katgori Sayısı
+--Pasif Katgori Sayısı

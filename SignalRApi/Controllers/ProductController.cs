@@ -28,6 +28,12 @@ namespace SignalRApi.Controllers
             return Ok(value);
         }
 
+        [HttpGet("ProductCount")]
+        public IActionResult ProductCount()
+        {
+            return Ok(_productService.TProductCount());
+        }
+
         [HttpGet("ProductListWithCategory")]
         public IActionResult ProductListWithCategory()
         {
@@ -55,7 +61,7 @@ namespace SignalRApi.Controllers
                 Price = createProductDto.Price,
                 ProductName = createProductDto.ProductName,
                 ProductStatus = createProductDto.ProductStatus,
-                CategoryID=createProductDto.CategoryID,
+                CategoryID = createProductDto.CategoryID,
             });
             return Ok("Ürün Bilgisi Eklendi");
         }
