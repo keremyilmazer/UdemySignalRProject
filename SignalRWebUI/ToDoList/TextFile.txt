@@ -2,3 +2,6 @@
 --ProductCount
 --Aktif Katgori Sayısı
 --Pasif Katgori Sayısı
+
+--Kategori Adına Göre Ürün Sayısı1
+--Kategori Adına Göre Ürün Sayısı2
