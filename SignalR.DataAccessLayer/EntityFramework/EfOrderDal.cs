@@ -1,4 +1,5 @@
-﻿using SignalR.DataAccessLayer.Abstract;
+﻿using Microsoft.VisualBasic;
+using SignalR.DataAccessLayer.Abstract;
 using SignalR.DataAccessLayer.Concrete;
 using SignalR.DataAccessLayer.Repositories;
 using SignalR.EntityLayer.Entities;
@@ -26,6 +27,11 @@ namespace SignalR.DataAccessLayer.EntityFramework
         {
             using var context = new SignalRContext();
             return context.Orders.OrderByDescending(x => x.OrderID).Take(1).Select(y => y.TotalPrice).FirstOrDefault();
+        }
+
+        public decimal TodayTotalPrice()
+        {
+            return 0;
         }
 
         public int TotalOrderCount()
