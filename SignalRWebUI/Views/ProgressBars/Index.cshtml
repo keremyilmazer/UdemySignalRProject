@@ -31,6 +31,14 @@
                     $("#totalmoneycaseamount").text(value);
                 });
 
+                connection.on("RecieveActiveOrderCount", (value2) => {
+                    $("#activeordercount").text(value2);
+                });
+
+                connection.on("RecieveMenuTableCount", (value3) => {
+                    $("#menutablecount").text(value3);
+                });
+
             });
 
         </script>
@@ -108,8 +116,8 @@
                                     </div>
                                     <div class="col-7 d-flex align-items-center">
                                         <div class="numbers">
-                                            <p class="card-category">Number</p>
-                                            <h4 class="card-title">150GB</h4>
+                                            <p class="card-category">Aktif Siparişler</p>
+                                            <h4 class="card-title" id="activeordercount"></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -122,8 +130,8 @@
                                     </div>
                                     <div class="col-7 d-flex align-items-center">
                                         <div class="numbers">
-                                            <p class="card-category">Followers</p>
-                                            <h4 class="card-title">+45K</h4>
+                                            <p class="card-category">Masa Sayısı</p>
+                                            <h4 class="card-title" id="menutablecount"></h4>
                                         </div>
                                     </div>
                                 </div>
